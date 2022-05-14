@@ -5,7 +5,7 @@ import Filters from './Components/Filters';
 import Restaurant from './Components/Restaurant';
 import RestaurantsList from './Components/RestaurantsList';
 import {useState, useEffect} from 'react';
-import { NavLink, Routes, Route, useParams } from "react-router-dom";
+//import { NavLink, Routes, Route, useParams } from "react-router-dom";
 
 
 
