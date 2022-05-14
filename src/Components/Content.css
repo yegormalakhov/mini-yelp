@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    padding: 15px;
+    text-align: center;
+}
+
+
+.FiltersContainer button {
+cursor: pointer;
+/* border-radius: 0; */
+background-color: ivory;
+}
+
+button:hover {
+    background-color: lightblue;
+}
+button:active {
+    transform: translateY(3px);
+}
+.FiltersContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:20%;
+    /* color:red; */
+}
+
+
+.PriceFilter {
+    margin: 10px 0 25px 0;
+}
+
+/*
+.RatingFilter {
+
+}
+*/
+.PriceBtn {
+    padding: 5px 10px;
+}
+.RatingBtn {
+    padding: 5px 10px;
+}
+
+.firstBtn {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.lastBtn {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.SearchList {
+    /* color:red; */
+    width: 80%;
+}
