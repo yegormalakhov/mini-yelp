@@ -3,11 +3,11 @@ import restaurants from "../TestData.json";
 import RestaurantCard from "./RestaurantCard.js";
 
 
-const RestaurantsList = () => {
-    
+const RestaurantsList = (props) => {
+    console.log(props.props);
     return (
     <div className="SearchList">
-    { restaurants && restaurants.map((restaurant, index) => <RestaurantCard key={restaurant.id} props={restaurant} rank={index}/>)}
+    { props.props && props.props.map((restaurant, index) => <RestaurantCard key={restaurant._id} props={restaurant} rank={index}/>)}
        
     </div>
         )

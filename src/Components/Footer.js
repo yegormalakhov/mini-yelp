@@ -47,7 +47,7 @@ const Footer = () => {
           <li>Germany ▼</li>
         </ul>
       </div>
-      <span className="copyright">Copyright © 2004–2022 Yelp Inc. Yelp, and related marks are registered trademarks of Yelp.</span>
+      <span className="copyright">Copyright © 2004–2022 Belp Inc. Belp, and related marks are registered trademarks of Belp.</span>
     </div>
   );
 };

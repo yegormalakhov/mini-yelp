@@ -2,7 +2,7 @@ import restaurants from "../TestData.json";
 import './Restaurant.css';
 
 const Restaurant = () => {
-    console.log(restaurants);
+    // console.log(restaurants);
         // <div className='restaurantContainer'>
          /* <div className="restaurantInformation">
                 <div className="restaurantDescription">
@@ -49,10 +49,10 @@ const Restaurant = () => {
                     <p className="">Rating: {restaurants[0].star_rating}</p>
                     <p className="">{restaurants[0].description}</p>
                 </div>
-                <div className='Img'></div>
+                <div className='Img'><img src={restaurants[0].imgUrl} alt="restaurant map"/></div>
             </div>
             <div className="restaurantLocation">
-                <div className="restaurantMap"></div>
+                <div className="restaurantMap"> Here Should be a map</div>
                 <div className="restaurantLocationInfo">
                     <div className="hoursContainer">
                         <ul>
@@ -68,7 +68,6 @@ const Restaurant = () => {
                     <div className="ContactInfo">
                         <p>{restaurants[0].address}</p>
                         <p>{restaurants[0].city}</p>
-                        <br />
                         <p>{restaurants[0].phone}</p>
                         <p>{restaurants[0].email}</p>
                     </div>
