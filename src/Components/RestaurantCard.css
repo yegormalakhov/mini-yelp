@@ -1,0 +1,36 @@
+.restaurant-card {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #828282;
+    margin-right: 300px;
+    margin-top: 5px;
+}
+
+.restaurant-image {
+    max-height: 200px;
+    max-width: 200px;
+    padding: 5px;
+    margin-right: 20px;
+}
+
+.restaurant-details {
+  display: flex;
+  flex-direction: column;
+}
+.rating-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.open-status {
+    display: flex;
+    flex-direction: row;
+}
+
+.rated {
+    color: rgb(26,216,255);
+}
+
+.notrated {
+    color: lightgray;
+}

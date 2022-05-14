@@ -1,0 +1,70 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.restaurantLocation  ul {
+    list-style: none;
+}
+.restaurantLocation  li {
+    padding: 5px;
+    margin: 15px;
+}
+
+.restaurantContainer {
+    display: flex;
+    /* justify-content: space-around; */
+    flex-direction: column;
+    background-color: red;
+    width: 90%;
+}
+
+.restaurantInformation{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.restaurantDescription {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.restaurantDescription h3 {
+    margin: 10px;
+    padding: 10px;
+}
+.restaurantDescription p {
+    margin: 5px 10px;
+    padding: 10px;
+}
+
+.restaurantLocation h2 {
+   
+}
+.Img {
+    width: 50%;
+    height: 300px;
+    background-color: antiquewhite;
+}
+
+.restaurantLocation {
+    display: flex;
+}
+.restaurantMap {
+    width: 50%;
+    background-color: white;
+}
+
+.ContactInfo p {
+padding: 10px;
+margin: 10px;
+}
+
+.Reviews {
+    width: 100%;
+    height: 300px;
+    background-color: rgb(51, 142, 142);
+}
