@@ -1,13 +1,11 @@
-import './App.css';
-import Header from './Components/Header';
-import Footer from './Components/Footer';
-import Filters from './Components/Filters';
-import Restaurant from './Components/Restaurant';
-import RestaurantsList from './Components/RestaurantsList';
-import {useState, useEffect} from 'react';
-//import { NavLink, Routes, Route, useParams } from "react-router-dom";
-
-
+import "./App.css";
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+import Filters from "./Components/Filters";
+import Restaurant from "./Components/Restaurant";
+import RestaurantsList from "./Components/RestaurantsList";
+import { useState, useEffect } from "react";
+import { NavLink, Routes, Route, Outlet } from "react-router-dom";
 
 function App() {
   const [priceCategory, setPriceCategory] = useState();
@@ -16,28 +14,21 @@ function App() {
   const [restaurants, setRestaurants] = useState();
   const [filteredRestaurants, setFilteredRestaurants] = useState();
 
-  //  const { restaurantId } = useParams();
-  //  const singleRestaurant = restaurants.filter((restaurant) => restaurantId ? restaurants._id == restaurantId : restaurants);
-
-  const handlePriceFilter = (event) =>{
+  const handlePriceFilter = (event) => {
     const price = event.target.innerText.length;
     setPriceCategory(price);
-    
-
-  }
+  };
 
   const handleRatingFilter = (event) => {
     const rating = event.target.innerText;
     setRatingCategory(rating);
-
-  }
+  };
 
   const handleSearchWord = (word) => {
     setWordQuery(word);
   };
 
-  useEffect(()=>{
-
+  useEffect(() => {
     fetch("https://miniyelpback.herokuapp.com/restaurants/")
       .then((response) => {
         if (!response.ok) {
@@ -54,36 +45,49 @@ function App() {
         console.log(error);
       });
 
-      if(priceCategory){
-        const targetedCategory = restaurants.filter((restaurant)=> restaurant.price_category === priceCategory);
-        console.log(targetedCategory);
-        setFilteredRestaurants(targetedCategory);
-      }
+    if (priceCategory) {
+      const targetedCategory = restaurants.filter(
+        (restaurant) => restaurant.price_category === priceCategory
+      );
+      setFilteredRestaurants(targetedCategory);
+    }
+    // if(ratingCategory){
+    //   const targetedCategory = restaurants.filter((restaurant)=> restaurant.star_rating === ratingCategory);
+    //   setRestaurants(targetedCategory);
+    // }
+  }, [priceCategory, ratingCategory, wordQuery]);
 
-      // if(ratingCategory){
-      //   const targetedCategory = restaurants.filter((restaurant)=> restaurant.star_rating === ratingCategory);
-      //   setRestaurants(targetedCategory);
-      // }
-  },[priceCategory, ratingCategory, wordQuery]);
-  
+  if (!restaurants) {
+    return <h1>Loading...</h1>;
+  }
   return (
     <div>
       <Header />
-      <div className='Content'>
-        {/* <Routes>
-          <Route path="/restaurants"  element={<RestaurantsList props={restaurants} searchWord={handleSearchWord}/>} />
-          <Route path=`/restaurants/${restaurantId}`  element={<Restaurant props={singleRestaurant} />} />
-        </Routes> */}
-        <Filters onPriceClick={handlePriceFilter} onRatingClick={handleRatingFilter} />
-        { restaurants && <RestaurantsList props={filteredRestaurants ? filteredRestaurants : restaurants} searchWord={handleSearchWord} /> }
-        {/* { filteredRestaurants && <RestaurantsList props={filteredRestaurants} searchWord={handleSearchWord} /> } */}
+      <div className="Content">
+        <Filters
+          onPriceClick={handlePriceFilter}
+          onRatingClick={handleRatingFilter}
+        />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <RestaurantsList
+                props={filteredRestaurants ? filteredRestaurants : restaurants}
+                searchWord={handleSearchWord}
+              />
+            }
+          />
+          <Route
+            path="/:restaurantId"
+            element={<Restaurant info={restaurants} />}
+          />
+        </Routes>
       </div>
-      
-      <Footer />
-      <Restaurant />
-    </div>
 
-  )
+      <Footer />
+    </div>
+  );
 }
 
 export default App;

@@ -1,38 +1,36 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 h3 {
-    padding: 15px;
-    text-align: center;
+  padding: 15px;
+  text-align: center;
 }
 
-
 .FiltersContainer button {
-cursor: pointer;
-/* border-radius: 0; */
-background-color: ivory;
+  cursor: pointer;
+  /* border-radius: 0; */
+  background-color: ivory;
 }
 
 button:hover {
-    background-color: lightblue;
+  background-color: lightblue;
 }
 button:active {
-    transform: translateY(3px);
+  transform: translateY(3px);
 }
 .FiltersContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width:20%;
-    /* color:red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  /* color:red; */
 }
 
-
 .PriceFilter {
-    margin: 10px 0 25px 0;
+  margin: 10px 0 25px 0;
 }
 
 /*
@@ -41,22 +39,31 @@ button:active {
 }
 */
 .PriceBtn {
-    padding: 5px 5px;
+  padding: 5px 5px;
 }
 .RatingBtn {
-    padding: 5px 10px;
+  padding: 5px 10px;
 }
 
 .firstBtn {
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .lastBtn {
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .SearchList {
-    /* color:red; */
-    width: 80%;
+  /* color:red; */
+  width: 80%;
+}
+
+a {
+  text-decoration: none;
+}
+.goback {
+  margin: 5px;
+  padding: 5px;
+  cursor: pointer;
 }
