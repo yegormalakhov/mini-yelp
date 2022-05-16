@@ -1,6 +1,6 @@
 import "./Content.css";
 
-const Filters = ({ onPriceClick, onRatingClick }) => {
+const Filters = ({ onPriceClick, onRatingClick, onClick }) => {
   return (
     <div className="FiltersContainer">
       <div className="PriceFilter">
@@ -20,6 +20,11 @@ const Filters = ({ onPriceClick, onRatingClick }) => {
         <button className="PriceBtn lastBtn" onClick={onPriceClick}>
           <span>€€€€€</span>
         </button>
+        <br />
+        <br />
+        <button className="clearPriceBtn" onClick={onClick}>
+          clear
+        </button>
       </div>
       <div className="RatingFilter">
         <h3>Filter rating</h3>
@@ -37,6 +42,11 @@ const Filters = ({ onPriceClick, onRatingClick }) => {
         </button>
         <button className="RatingBtn lastBtn" onClick={onRatingClick}>
           <span>5</span>
+        </button>
+        <br />
+        <br />
+        <button className="clearRatingBtn" onClick={onClick}>
+          clear
         </button>
       </div>
       <div></div>

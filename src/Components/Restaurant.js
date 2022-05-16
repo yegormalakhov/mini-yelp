@@ -17,12 +17,12 @@ const Restaurant = ({ info }) => {
     <div className="restaurantContainer">
       <div className="restaurantInformation">
         <div className="restaurantDescription">
-          <h3>{targetedRestaurant.name}</h3>
-          <p className="">Cuisine:{targetedRestaurant.categories}</p>
-          <p className="">
+          <h1>{targetedRestaurant.name}</h1>
+          <p className="restaurantDetails">Cuisine:{targetedRestaurant.categories}</p>
+          <p className="restaurantDetails">
             Price category: {targetedRestaurant.price_category}
           </p>
-          <p className="">Rating: {targetedRestaurant.star_rating}</p>
+          <p className="restaurantDetails">Rating: {targetedRestaurant.star_rating}</p>
           <p className="">{targetedRestaurant.description}</p>
         </div>
 
@@ -31,7 +31,9 @@ const Restaurant = ({ info }) => {
         </div>
       </div>
       <div className="restaurantLocation">
-        <div className="restaurantMap"> Here Should be a map</div>
+        <div className="restaurantMap">
+          <p>Here Should be a map</p>
+        </div>
         <div className="restaurantLocationInfo">
           <div className="hoursContainer">
             <ul>
@@ -52,10 +54,11 @@ const Restaurant = ({ info }) => {
           </div>
         </div>
       </div>
-      <hr />
+      
       <div>
         <GoBack />
       </div>
+      <hr />
       <div className="Reviews">
         <h2> No reviews yet</h2>
       </div>

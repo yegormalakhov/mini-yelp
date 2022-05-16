@@ -28,6 +28,10 @@ function App() {
     setWordQuery(word);
   };
 
+  const handleFilterClear = () => {
+    setFilteredRestaurants("");
+  };
+
   useEffect(() => {
     fetch("https://miniyelpback.herokuapp.com/restaurants/")
       .then((response) => {
@@ -60,6 +64,7 @@ function App() {
   if (!restaurants) {
     return <h1>Loading...</h1>;
   }
+  console.log(restaurants);
   return (
     <div>
       <Header />
@@ -67,6 +72,7 @@ function App() {
         <Filters
           onPriceClick={handlePriceFilter}
           onRatingClick={handleRatingFilter}
+          onClick={handleFilterClear}
         />
         <Routes>
           <Route

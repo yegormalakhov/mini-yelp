@@ -1,10 +1,8 @@
 import "./Content.css";
-import restaurants from "../TestData.json";
 import RestaurantCard from "./RestaurantCard.js";
 import { Link } from "react-router-dom";
 
 const RestaurantsList = (props) => {
-  console.log(props.props);
   return (
     <div className="SearchList">
       {props.props &&

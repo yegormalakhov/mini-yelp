@@ -59,6 +59,9 @@ button:active {
   width: 80%;
 }
 
+.mapContainer {
+  width: 90%;
+}
 a {
   text-decoration: none;
 }
